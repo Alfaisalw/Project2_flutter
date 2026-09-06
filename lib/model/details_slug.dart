@@ -1,6 +1,6 @@
 class DetailsSlug {
   String? title;
-  String? descripton;
+  String? description;
   String? goals;
   String? features;
   String? requirements;
@@ -8,27 +8,33 @@ class DetailsSlug {
   String? endDate;
 
   DetailsSlug({
-    this.descripton,
+    this.description,
     this.features,
     this.goals,
     this.title,
     this.requirements,
-  this.startDate , this.endDate
-  
+    this.startDate,
+    this.endDate,
   });
 
   factory DetailsSlug.fromJson(Map<String, dynamic> json) {
+    String? convertListToString(dynamic jsonList) {
+      if (jsonList == null) return null;
+      if (jsonList is List) {
+        return jsonList.map((item) => "• $item").join("\n\n");
+      }
+      return jsonList.toString();
+    }
+
     return DetailsSlug(
       title: json["title"],
-      descripton: json["descripton"],
+      description: json["description"],
 
-      goals: json["goals"],
-      features: json["features"],
-
-      requirements: json["requirements"],
-      startDate: json["startDate"]?? "Not found", endDate: json["endDate"]?? "Not found",
-
-
+      goals: convertListToString(json["goals"]),
+      features: convertListToString(json["features"]),
+      requirements: convertListToString(json["requirements"]),
+      startDate: json["startDate"] ?? "Not found",
+      endDate: json["endDate"] ?? "Not found",
     );
   }
 }

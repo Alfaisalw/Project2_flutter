@@ -73,11 +73,11 @@ class FirstScreen extends StatelessWidget {
                           ),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(9),
-                            border: Border.all(color: Colors.purple, width:2 ),
-                            boxShadow:  [
+                            border: Border.all(color: Colors.purple, width: 2),
+                            boxShadow: [
                               BoxShadow(
                                 color: Color.fromARGB(255, 254, 250, 255),
-                                offset: Offset(0,0),
+                                offset: Offset(0, 0),
                                 blurRadius: 0,
                               ),
                             ],

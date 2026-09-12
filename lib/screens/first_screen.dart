@@ -7,7 +7,6 @@ import 'package:project_2_faisal/screens/second_screen.dart';
 class FirstScreen extends StatelessWidget {
   const FirstScreen({super.key});
 
-  
   final List<String> logoUrls = const [
     'https://cdn.vectorstock.com/i/1000v/88/07/meta-logo-facebook-rebrand-vector-40208807.jpg',
     'https://opportunitiesforyoungkenyans.co.ke/wp-content/uploads/2025/04/Microsoft.-Microsoft.png',
@@ -76,7 +75,7 @@ class FirstScreen extends StatelessWidget {
                       right: 24,
                     ),
                     child: Column(
-                      mainAxisSize: MainAxisSize.min, // يقلص مساحة الضبابية لأسفل الشاشة لتشمل المحتوى فقط
+                      mainAxisSize: MainAxisSize.min,
                       children: [
                         Semantics(
                           header: true,
@@ -108,16 +107,14 @@ class FirstScreen extends StatelessWidget {
 
                         const SizedBox(height: 36),
 
-                        // ترتيب الشعارات من اليمين لليسار، وتنتقل لسطر جديد تلقائياً
                         Semantics(
                           label: 'شركات تقنية عالمية',
                           child: Wrap(
-                            spacing: 20.0, // المسافة الأفقية بين الشعارات
-                            runSpacing: 20.0, // المسافة العمودية بين الأسطر
+                            spacing: 20.0,
+                            runSpacing: 20.0,
                             alignment: WrapAlignment.center,
                             children: logoUrls.map((url) {
                               return ExcludeSemantics(
-                                // منع القراءة المزعجة لكل صورة
                                 child: SizedBox(
                                   width: 65,
                                   height: 45,
@@ -139,16 +136,15 @@ class FirstScreen extends StatelessWidget {
 
                         const SizedBox(height: 48),
 
-                        // الزر بالتصميم السابق
                         SizedBox(
                           width: 220,
-                          height: 56, // ارتفاع الزر مناسب لسهولة الوصول
+                          height: 56,
                           child: ElevatedButton(
                             onPressed: () {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => const CourseScreen (),
+                                  builder: (context) => const CourseScreen(),
                                 ),
                               );
                             },

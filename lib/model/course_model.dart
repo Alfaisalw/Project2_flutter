@@ -6,6 +6,7 @@ class CourseModel {
   String? image;
 
   String? slug;
+  String? startDate;
 
   String? type; //معسكر او برنامج
 
@@ -20,6 +21,8 @@ class CourseModel {
 
     this.title,
     this.type,
+    
+    this.startDate
   });
 
   factory CourseModel.fromJson(Map<String, dynamic> json) {
@@ -35,6 +38,9 @@ class CourseModel {
       scopeName: json["initiativeScopeName"] ?? "Not found",
 
       type: json["initiativeCategoryName"] ?? "Not found",
+      
+      startDate: json["startDate"] ?? "Not found",
+
     );
   }
 }
